@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Test page">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Nikolai Eremin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовая страница</title>
+    <link rel="stylesheet" href="mystyle.css" />  
+    <script>
+        function writeParagraph() {
+            document.getElementById("demo").innerHTML = "Hello JavaScript!";
+        }
+        function createElementHR() {
+            var x = document.createElement("HR");
+            document.body.appendChild(x);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>My First Heading</h1>
+    <p id="demo">A Paragraph <b>1</b></p>
+    <button type="button" onclick="writeParagraph()">Try it</button>
+    <hr style="width:50%; height:10px;border-width:0;color:gray;background-color:gray">
+    <p id="demo">A Paragraph <b>2</b></p>
+    <button type="button" onclick="createElementHR()">Try it</button>
+
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="range" id="a" value="50">
+        +<input type="number" id="b" value="25">
+        =<output name="x" for="a b"></output>
+    </form>
+
+    <svg height="130" width="500">
+        <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+                <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+        <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+        Sorry, your browser does not support inline SVG.
+    </svg>
+    <table style="width: 20%; text-align: center; border: 1px solid black;">
+        <tr>
+            <th>Типы input</th>
+            <th>Пример</th>
+        </tr>
+        <tr>
+            <td>
+                button
+            </td>
+            <td>
+                <input type="button" onclick="alert('Hello World!')" value="Click Me!">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                checkbox
+            </td>
+            <td>
+                <form>
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                    <label for="vehicle1"> I have a bike</label><br>
+                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                    <label for="vehicle2"> I have a car</label><br>
+                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                    <label for="vehicle3"> I have a boat</label>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                color
+            </td>
+            <td>
+                <input type="color">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                date
+            </td>
+            <td>
+                <input type="date">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                datetime-local
+            </td>
+            <td>
+                <input type="datetime-local">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                email
+            </td>
+            <td>
+                <input type="email">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                file
+            </td>
+            <td>
+                <input type="file">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                hidden
+            </td>
+            <td>
+                <input type="hidden">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                image
+            </td>
+            <td>
+                <input type="image" src="csharp.jpg" alt=".NET рулит!" style="width: 50px; height: 50px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                month
+            </td>
+            <td>
+                <input type="month">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                number
+            </td>
+            <td>
+                <input type="number">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                password
+            </td>
+            <td>
+                <input type="password">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                radio
+            </td>
+            <td>
+                <form style="text-align: left; width: 100px;">
+                    <input type="radio" id="male" name="gender" value="male"> <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="female"> <label for="female">Female</label><br>
+                    <input type="radio" id="other" name="gender" value="other"> <label for="other">Other</label>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                range
+            </td>
+            <td>
+                <input type="range">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                reset
+            </td>
+            <td>
+                <input type="reset">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                search
+            </td>
+            <td>
+                <input type="search">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                submit
+            </td>
+            <td>
+                <input type="submit" onclick="alert('Hello World!')" value="Click Me!">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                tel
+            </td>
+            <td>
+                <input type="tel">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                text
+            </td>
+            <td>
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                time
+            </td>
+            <td>
+                <input type="time">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                url
+            </td>
+            <td>
+                <input type="url">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                week
+            </td>
+            <td>
+                <input type="week">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                textarea
+            </td>
+            <td>
+                <form>
+                    <p><b>Введите ваш отзыв:</b></p>
+                    <p><textarea rows="10" cols="45" name="text"></textarea></p>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
