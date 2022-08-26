@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+        <head>
+        <script src="script.js"></script>
+    </head>
+    <body>     
+        <style> .focused { outline: 4px solid red; } </style>
+        <div>
+            <h1>Арифметические действия</h1>
+            <input id="value1">
+            <select id="operations" name="operations">
+                <option selected value="addition">+</option>
+                <option value="subtraction">-</option>
+                <option value="multiplication">*</option>
+                <option value="division">/</option>
+              </select>
+            <input id="value2">
+            <input type="button" value="=" onclick="ArithmeticOperations()">
+            <label id="result"></label>
+        </div>
+        <div>
+            <h1>Работа со строками</h1>
+            <input id="str1">
+            <input id="str2">
+            <p>
+                <input type="button" value="Применить" onclick="WorkWithStrings()">
+            </p>
+            <h2>Конкатенация</h2>
+            <label id="resultConcatenation"></label>
+            <h2>Экранирование</h2>
+            <label id="resultEscaping"></label>
+            <p><label id="resultEscapingTemplate"></label></p>
+            <h2>Шаблонизация</h2>
+            <label id="resultTemplating"></label>
+        </div>
+        <div>
+            <h1>Обработка ошибок – try/catch</h1>
+            <input type="button" value="Вызвать ошибку" onclick="CallError()">
+            <p>Error Name: <label id="errorName"></label></p>
+            <p>Error Message: <label id="errorMessage"></label></p>
+            <p>Error Stack: <textarea id="errorStack"></textarea></p>
+            <p>Error: <textarea id="error"></textarea></p>
+        </div>
+        <div id=container>
+            <h1>Изменение контента определенного элемента</h1>
+            Ввежите текст: <input type="text" id=userContent>
+            <p><input type="button" value="Применить" onclick="click()"></p>
+            <label id="someContent">Тут живет какой-то контент</label>
+        </div>
+
+        <div>
+            <h1>изменение контента элемента</h1>
+            Ввежите текст: <input type="text" id=userContent2>
+            <label id="someContent2">Тут живет какой-то контент</label>
+            <p><input type="button" id="btnSwitchEvent" value="Вкл. события input()" onclick="switchEvent()"></p>
+        </div>
+        
+
+        <script>
+            let container = document.getElementById('container');
+            container.onmouseover = container.onmouseout = container.onmousedown = function (event) {
+                switch(event.type){
+                    case "mouseover":
+                        event.target.style.background = 'pink'
+                        break;
+                    case "mouseout":
+                        event.target.style.background = ''
+                        break;
+                    case "mousedown":
+                        event.target.style.background = 'green'
+                        break;
+                }            
+            }
+            container.addEventListener("focusin", () => userContent.classList.add('focused') );
+            container.addEventListener("focusout", () => userContent.classList.remove('focused'));
+            
+            function click(){
+                let userContent = document.getElementById("userContent");
+                let someContent = document.getElementById("someContent");
+                someContent.innerHTML = userContent.value;
+            }
+
+                      
+            function switchEvent(){
+                let userContent2 = document.getElementById('userContent2');
+                if(userContent2.oninput == null){
+                    btnSwitchEvent.value = "Выкл. события input()";
+                    userContent2.oninput = function(){
+                        let someContent = document.getElementById('someContent2');
+                        someContent.innerHTML = this.value;
+                        let btnSwitchEvent = document.getElementById('btnSwitchEvent');
+                        
+                    }
+                }
+                else{
+                    userContent2.oninput = null;
+                    btnSwitchEvent.value = "Вкл. события input()";
+                }
+            }
+
+        </script>   
+    </body>
+</html>
