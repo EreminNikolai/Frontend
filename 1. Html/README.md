@@ -1,14 +1,15 @@
 ## Итерация 1. HTML
 
-Цель итерации: ознакомиться, изучить и научиться использовать на практике возможности языка разметки HTML.
+#### Цель итерации: 
+ознакомиться, изучить и научиться использовать на практике возможности языка разметки HTML.
 
-Задание: 
+#### Задание: 
 создать страницу с использованием HTML c наполненными head и body.
 HEAD должен содержать линки https://www.w3schools.com/html/html_head.asp
 BODY должен содержать теги разметки + базовые HTML-элементы:
 кнопка, инпуты разных типов, текстовая зона, картинка, таблица, ссылки, форма.
 
-Ссылки для изучения:
+#### Ссылки для изучения:
 https://www.w3schools.com/html/html_intro.asp
 https://www.w3schools.com/html/html_elements.asp
 https://www.w3schools.com/html/html_head.asp
@@ -20,7 +21,7 @@ https://www.w3schools.com/html/html_formatting.asp
 https://www.w3schools.com/html/html_form_elements.asp
 https://www.w3schools.com/html/html_form_input_types.asp
 
-Полученные знания: 
+#### Полученные знания: 
 - Структура HTML-файла
 - Доступные теги в HEAD
 - Доступные теги разметки BODY
