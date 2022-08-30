@@ -28,3 +28,24 @@ th {
     white-space: nowrap;
     overflow: hidden;
 }
+
+.container {
+    height: 100px;
+    position: relative;
+    border: 3px solid green;
+    margin: 5px;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.resultElementP{
+    color: red;
+    font-size: xx-large;
+}

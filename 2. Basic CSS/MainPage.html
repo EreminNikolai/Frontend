@@ -13,24 +13,42 @@
         function writeParagraph() {
             document.getElementById("demo").innerHTML = "Hello JavaScript!";
         }
-        function createElementHR() {
-            let x = document.createElement("HR");
-            document.body.appendChild(x);
+        function addElement() {
+            let p = document.createElement("P");
+            p.className = "resultElementP";
+            p.textContent = "Результат работы JS";
+            
+            let center = document.createElement("div"); 
+            center.className = "center";
+            center.appendChild(p);
+            
+            let container = document.createElement("div");
+            container.className = "container";
+            container.appendChild(center);
+            
+            document.getElementById("divResult").appendChild(container);
         }
-    </script>
+        function removeElement(){
+            let elements = document.getElementsByClassName("container").item(0);
+            document.getElementById("divResult").removeChild(elements);
+        }
+    </script> 
 </head>
 
 <body>
-    <h1>My First Heading</h1>
+    <h1>My First Heading</h1>  
     <p id="demo">A Paragraph <b>1</b></p>
     <button type="button" onclick="writeParagraph()">Try it</button>
     <hr style="width:50%; height:10px;border-width:0;color:gray;background-color:gray">
-    <p id="demo">A Paragraph <b>2</b></p>
-    <button type="button" onclick="createElementHR()">Try it</button>
-
+    <p id="demo2">A Paragraph <b>2</b></p>
+    <button type="button" onclick="addElement()">Add element</button>
+    <button type="button" onclick="removeElement()">Remove element</button>
+    
+    <div id="divResult"></div>
+    
     <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
-        <input type="range" id="a" value="50">
-        +<input type="number" id="b" value="25">
+        <input type="range" name="a" value="50">
+        +<input type="number" name="b" value="25">
         =<output name="x" for="a b"></output>
     </form>
 
