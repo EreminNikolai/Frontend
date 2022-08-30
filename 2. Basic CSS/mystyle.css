@@ -20,3 +20,11 @@ th {
     padding: 10px;
     border: 1px solid black;
 }
+
+.long_string{
+    font-size: 30px;
+    color: green;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
