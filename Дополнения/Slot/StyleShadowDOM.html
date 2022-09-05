@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Style shadow DOM</title>
+    <script>
+        customElements.define('custom-dialog', class extends HTMLElement {
+            connectedCallback() {
+                this.attachShadow({mode: 'open'}).append(tmpl.content.cloneNode(true));
+            }
+        });
+    </script>
+    <style>
+        custom-dialog {
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <template id="tmpl">
+        <style>
+            /* стиль будет применён изнутри к элементу <custom-dialog> */
+            :host([centered]) {
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                display: inline-block;
+                border: 1px solid red;
+                padding: 10px !important;
+            }
+            
+            :host {
+                display: inline-block;
+                border: 1px solid red;
+                padding: 10px;
+            }
+        </style>
+        <slot></slot>
+    </template>
+    <custom-dialog centered>
+        Centered!
+    </custom-dialog>
+
+    <custom-dialog>
+        Not centered.
+    </custom-dialog>
+</body>
+</html>
