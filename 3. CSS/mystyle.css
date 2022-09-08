@@ -7,16 +7,9 @@ body{
   "green pink yellow";
   grid-template-rows: 1fr;
   grid-template-columns: 100px 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 10px 20px; 
   height: 100vh;
-  margin:0 10%;
-}
-
-#red{
-	grid-area: red;	
-	border:maroon solid 2px;
-	background-color: red;
-	color: greenyellow;
+  margin: 10px;
 }
 
 #yellow{
@@ -24,6 +17,20 @@ body{
 	border: darkolivegreen solid 2px;
 	background-color: yellow;
 	color: blue;
+	padding: 5px;
+}
+
+.yellow{
+	top: 0;
+	position: sticky;
+}
+
+#red{
+	grid-area: red;	
+	border:maroon solid 2px;
+	background-color: red;
+	color: greenyellow;
+	padding: 5px;
 }
 
 #green{
@@ -33,9 +40,8 @@ body{
   	grid-template-rows: 1fr 1fr 1fr;
   	grid-template-columns: 1fr;
   	grid-gap: 40px;
-  	margin: 0;
-	color: red;
-  
+	margin: 0;
+	color: darkblue;
 }
 
 .green{
@@ -46,14 +52,20 @@ body{
 
 #greenFirst{
 	grid-area: greenFirst;
+	width: 100px;
+	padding: 5px;
 }
 
 #greenSecound{
 	grid-area: greenSecound;
+	width: 100px;
+	padding: 5px;
 }
 
 #greenThird{
 	grid-area: greenThird;
+	width: 100px;
+	padding: 5px;
 }
 
 #pink{
@@ -63,6 +75,9 @@ body{
 	color: black;
 }
 
+.pink{
+	padding: 10px;
+}
 
 @media screen and (max-width: 1024px) {
 	
@@ -75,7 +90,14 @@ body{
 }
 #yellow{
 	order:1;
+	position: sticky;
+	top: 1px;
 }
+
+.yellow{
+	position: initial;
+}
+	
 #green{
 	display: flex;
 	order:3;
@@ -84,7 +106,6 @@ body{
 	grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr;
 	justify-content:space-between;
-	grid-gap: auto;
 }
 
 #pink{

@@ -39,7 +39,7 @@
     <h1>My First Heading</h1>  
     <p id="demo">A Paragraph <b>1</b></p>
     <button type="button" onclick="writeParagraph()">Try it</button>
-    <hr style="width:50%; height:10px;border-width:0;color:gray;background-color:gray">
+    <hr/>
     <p id="demo2">A Paragraph <b>2</b></p>
     <button type="button" onclick="addElement()">Add element</button>
     <button type="button" onclick="removeElement()">Remove element</button>
@@ -85,12 +85,18 @@
             </td>
             <td>
                 <form>
-                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                    <label for="vehicle1"> I have a bike</label><br>
-                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                    <label for="vehicle2"> I have a car</label><br>
-                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                    <label for="vehicle3"> I have a boat</label>
+                    <div>
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
+                        <label for="vehicle1"> I have a bike</label>    
+                    </div>
+                    <div>
+                        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car"/>
+                        <label for="vehicle2"> I have a car</label>    
+                    </div>
+                    <div>
+                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"/>
+                        <label for="vehicle3"> I have a boat</label>
+                    </div>
                 </form>
             </td>
         </tr>

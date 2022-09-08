@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events shadow DOM</title>
+    <script>
+        customElements.define('user-card', class extends HTMLElement {
+            connectedCallback() {
+                this.attachShadow({mode: 'open'});
+                this.shadowRoot.innerHTML = `<div>
+      <b>Имя:</b> <slot name="username"></slot>
+    </div>`;
+                this.shadowRoot.firstElementChild.onclick =
+                    e => alert("Внутренний целевой элемент: " + e.target.tagName);
+            }
+        });
+
+        document.onclick =
+            e => alert("Внешний целевой элемент: " + e.target.tagName);
+    </script>
+</head>
+<body>
+    <user-card id="userCard">
+        <span slot="username">John Smith</span>
+    </user-card>
+</body>
+</html>     
