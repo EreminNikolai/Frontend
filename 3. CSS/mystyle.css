@@ -1,0 +1,115 @@
+body{
+	display: grid;
+	grid-template-areas: 
+  "red red yellow"
+  "green pink yellow"
+  "green pink yellow"
+  "green pink yellow";
+  grid-template-rows: 1fr;
+  grid-template-columns: 100px 1fr 1fr;
+  grid-gap: 10px 20px; 
+  height: 100vh;
+  margin: 10px;
+}
+
+#yellow{
+	grid-area: yellow;
+	border: darkolivegreen solid 2px;
+	background-color: yellow;
+	color: blue;
+	padding: 5px;
+}
+
+.yellow{
+	top: 0;
+	position: sticky;
+}
+
+#red{
+	grid-area: red;	
+	border:maroon solid 2px;
+	background-color: red;
+	color: greenyellow;
+	padding: 5px;
+}
+
+#green{
+	grid-area: green;
+	display: grid;
+	grid-template-areas: "greenFirst" "greenSecound" "greenThird";
+  	grid-template-rows: 1fr 1fr 1fr;
+  	grid-template-columns: 1fr;
+  	grid-gap: 40px;
+	margin: 0;
+	color: darkblue;
+}
+
+.green{
+	border:green solid 2px;
+	height: calc(100% - 4px);
+	background-color: greenyellow;
+}
+
+#greenFirst{
+	grid-area: greenFirst;
+	width: 100px;
+	padding: 5px;
+}
+
+#greenSecound{
+	grid-area: greenSecound;
+	width: 100px;
+	padding: 5px;
+}
+
+#greenThird{
+	grid-area: greenThird;
+	width: 100px;
+	padding: 5px;
+}
+
+#pink{
+	grid-area: pink;
+	border: blueviolet solid 2px;
+	background-color: pink;
+	color: black;
+}
+
+.pink{
+	padding: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+	
+body{
+	display: flex;
+	flex-direction: column;
+}
+#red{
+	order:2;
+}
+#yellow{
+	order:1;
+	position: sticky;
+	top: 1px;
+}
+
+.yellow{
+	position: initial;
+}
+	
+#green{
+	display: flex;
+	order:3;
+	grid-template-areas: 
+    "greenFirst greenSecound greenThird";
+	grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+	justify-content:space-between;
+}
+
+#pink{
+	order:4;	
+}
+
+}

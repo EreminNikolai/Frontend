@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Style slot</title>
+    <style>
+        span { font-size: large }
+        user-card2 {
+            --user-card-field-color: green;
+        }
+    </style>
+    <script>
+        customElements.define('user-card', class extends HTMLElement {
+            connectedCallback() {
+                this.attachShadow({mode: 'open'});
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        slot[name="username"] { font-weight: bold; }
+                        ::slotted(div) { border: 1px solid red; }
+                    </style>
+                    Имя: <slot name="username"></slot>
+                `;
+            }
+        });
+        
+        customElements.define('user-card2', class extends HTMLElement {
+            connectedCallback() {
+                this.attachShadow({mode: 'open'});
+                this.shadowRoot.append(document.getElementById('tmpl').content.cloneNode(true));
+            }
+        }); 
+    </script>
+</head>
+<body>
+    <user-card>
+        <div slot="username"><span>John Smith</span></div>
+    </user-card>
+
+    <template id="tmpl">
+        <style>
+            .field {
+                color: var(--user-card-field-color, blue);
+            }
+        </style>
+        <div class="field">Имя: <slot name="username2"></slot></div>
+        <div class="field">Дата рождения: <slot name="birthday2"></slot></div>
+    </template>
+
+    <user-card2>
+        <span slot="username2">John Smith</span>
+        <span slot="birthday2">01.01.2001</span>
+    </user-card2>
+</body>
+</html>

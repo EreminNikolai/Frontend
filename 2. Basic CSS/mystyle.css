@@ -1,0 +1,63 @@
+body {
+    background-color: rgb(237, 242, 243);
+}
+
+hr {
+    width:50%; 
+    height:10px;
+    border-width:0;
+    color:gray;
+    background-color:gray
+}
+
+h1 {
+    color: red;
+}
+
+p {
+    color: blue;
+}
+
+table { 
+    width: 300px;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+form{
+    text-align: left;
+}
+
+.long_string{
+    font-size: 30px;
+    color: green;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.container {
+    height: 100px;
+    position: relative;
+    border: 3px solid green;
+    margin: 5px;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.resultElementP{
+    color: red;
+    font-size: xx-large;
+}
